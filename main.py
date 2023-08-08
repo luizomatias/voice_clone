@@ -17,8 +17,8 @@ human_prompt = st.text_input(
     "Envie uma mensagem", placeholder="Write your prompt here..."
 )
 
-stability = st.slider('Stability', 0, 130, 25)
-similarity = st.slider('Clarity + Similarity Enhancement', 0, 130, 25)
+stability = st.slider('Stability', 0.0, 1.0, 0.1)
+similarity = st.slider('Clarity + Similarity Enhancement', 0.0, 1.0, 0.1)
 
 
 option_language = st.selectbox("Which language?", ("English", "Portuguese"))
