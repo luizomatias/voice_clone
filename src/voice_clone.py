@@ -43,7 +43,7 @@ class VoiceGenerator:
         self.voice_list = voices()
         self.voice_name = voice_name
 
-    def _voice_id(self):
+    def _voice_id(self) -> str:
         """
         Private method that retrieves the voice ID associated with the specified voice name.
 
@@ -60,7 +60,7 @@ class VoiceGenerator:
 
         raise VoiceNotFoundError(self.voice_name)
 
-    def text_to_speech(self, language: str, output_chatgpt: str):
+    def text_to_speech(self, language: str, output_chatgpt: str) -> str:
         """
         Generates text-to-speech audio using the Eleven Labs API.
 
