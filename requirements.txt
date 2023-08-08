@@ -1,0 +1,6 @@
+black==23.7.0
+elevenlabs==0.2.24
+langchain==0.0.256
+openai==0.27.8
+python-dotenv==1.0.0
+streamlit==1.25.0
