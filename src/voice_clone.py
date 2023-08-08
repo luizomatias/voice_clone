@@ -1,11 +1,11 @@
 """
 Voice Generator class
-Autor: LuizoMatias
 """
 import os
 import tempfile
+
 import requests
-from dotenv import load_dotenv, find_dotenv
+from dotenv import find_dotenv, load_dotenv
 from elevenlabs import set_api_key, voices
 
 load_dotenv(find_dotenv(), override=True)
@@ -45,13 +45,15 @@ class VoiceGenerator:
 
     def _voice_id(self) -> str:
         """
-        Private method that retrieves the voice ID associated with the specified voice name.
+        Private method that retrieves the voice ID associated with
+        the specified voice name.
 
         Returns:
             str: The voice ID for the selected voice.
 
         Raises:
-            Exception: If the specified voice does not exist in the available voice list.
+            Exception: If the specified voice does not exist in the
+            available voice list.
         """
 
         for voice in self.voice_list:
@@ -60,7 +62,12 @@ class VoiceGenerator:
 
         raise VoiceNotFoundError(self.voice_name)
 
-    def text_to_speech(self, language: str, output_chatgpt: str) -> str:
+    def text_to_speech(self,
+                       language: str,
+                       output_chatgpt: str,
+                       stability: float,
+                       similarity_boost: float
+                       ) -> str:
         """
         Generates text-to-speech audio using the Eleven Labs API.
 
@@ -72,7 +79,8 @@ class VoiceGenerator:
             str: The temporary filename of the generated audio in MP3 format.
 
         Raises:
-            requests.exceptions.RequestException: If an error occurs while making the API request.
+            requests.exceptions.RequestException: If an error occurs while
+            making the API request.
         """
 
         chunk_size = 1024
@@ -89,7 +97,8 @@ class VoiceGenerator:
         data = {
             "text": output_chatgpt,
             "model_id": language_model[language],
-            "voice_settings": {"stability": 0.7, "similarity_boost": 0.9},
+            "voice_settings": {"stability": stability,
+                               "similarity_boost": similarity_boost},
         }
 
         response = requests.post(url, json=data, headers=headers, timeout=5)

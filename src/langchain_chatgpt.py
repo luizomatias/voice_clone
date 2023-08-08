@@ -1,8 +1,7 @@
 """
 chat_result function
-Autor: LuizoMatias
 """
-from dotenv import load_dotenv, find_dotenv
+from dotenv import find_dotenv, load_dotenv
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
 
@@ -21,7 +20,7 @@ def chatgpt_result(system_message: str, human_message: str) -> str:
         str: The model's response to the conversation as a string.
     """
 
-    chatgpt = ChatOpenAI()
+    chatgpt = ChatOpenAI(model_name="gpt-3.5-turbo")
 
     result = chatgpt(
         [
@@ -29,7 +28,7 @@ def chatgpt_result(system_message: str, human_message: str) -> str:
             HumanMessage(content=human_message),
         ],
         temperature=0,
-        max_tokens=40,
+        max_tokens=70,
     )
 
     return result.content
