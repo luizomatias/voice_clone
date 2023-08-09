@@ -101,7 +101,7 @@ class VoiceGenerator:
                                "similarity_boost": similarity_boost},
         }
 
-        response = requests.post(url, json=data, headers=headers, timeout=5)
+        response = requests.post(url, json=data, headers=headers, timeout=10)
 
         with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as file:
             for chunk in response.iter_content(chunk_size=chunk_size):
