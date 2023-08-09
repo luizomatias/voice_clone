@@ -15,7 +15,7 @@ conda activate env
 after that, use makefile command:
 * `make deps`: It's gonna install all dependencies you need to run the experiment.
 
-You also need to get the API keys and create an `.env`` file in the root of the project.
+You also need to get the API keys (OpenAI and ElevenLabs) and create an `.env` file in the root of the project.
  ```
 OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
 ELEVEN_API_KEY=<YOUR_ELEVEN_API_KEY>
