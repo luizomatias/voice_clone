@@ -14,7 +14,7 @@ system_prompt = st.text_input(
 )
 
 human_prompt = st.text_input(
-    "Envie uma mensagem", placeholder="Write your prompt here..."
+    "Send a message", placeholder="Write your prompt here..."
 )
 
 stability = st.slider('Stability', 0.0, 1.0, 0.1)
