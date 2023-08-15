@@ -21,7 +21,7 @@ OPENAI_API_KEY=<YOUR_OPENAI_API_KEY>
 ELEVEN_API_KEY=<YOUR_ELEVEN_API_KEY>
 ```
 
-To run de app:
+To run the app:
 ```
 make run
 ``````
