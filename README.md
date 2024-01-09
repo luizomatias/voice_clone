@@ -3,6 +3,8 @@
 ## About
 This repository aims to demonstrate how to use the elevenlabs API to clone your voice and combine with LangChain+ChatGPT so that chatgpt responds with your voice.
 
+YouTube video with me introducing the project: https://www.youtube.com/watch?v=ItUqitZSg4c&t=2s
+
 ## Basic usage:
 
 Fist, make sure you are in a virtual environment. You can use either one (eg virtualenv). Example using conda:
